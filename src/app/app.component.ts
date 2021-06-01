@@ -19,7 +19,6 @@ export class AppComponent implements OnInit{
     this.dsObj.getDataFrom().subscribe(
         data=>{
         this.dummyObj=data;
-        console.log(data);
       },
       err=>{
         console.log("error in opening file is :",err);
