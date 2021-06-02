@@ -1,19 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
-body{
-    margin:0;
-    padding:0;
-    height:100%;
-    width: 100%;
-    background-color: skyblue;
-}
-
-footer{
-    position:absolute;
-    bottom: 0%;
-    width: 100%;
-}
-img{
-    position: absolute;
-    top: 40%;
-    left: 44%;
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+   height: 200px;
 }
