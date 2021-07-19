@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DataService } from './data.service';
 
 
 @Component({
@@ -10,19 +9,10 @@ import { DataService } from './data.service';
 })
 export class AppComponent implements OnInit{
   title = 'FlyHigh';
-  dummyObj:any;
-  constructor(private dsObj:DataService){
+  constructor(){
 
   }
 
   ngOnInit(){
-    this.dsObj.getDataFrom().subscribe(
-        data=>{
-        this.dummyObj=data;
-      },
-      err=>{
-        console.log("error in opening file is :",err);
-      }
-    )
   }
 }

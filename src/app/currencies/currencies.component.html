@@ -1,6 +1,58 @@
-<!-- <p>currencies works!</p>
-<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4 mt-5 mb-5">
-    <div class="col" *ngFor="let currObj of currency">
-        <h3>{{currObj.1.Code}}</h3>
+
+<!-- search field  -->
+<input type="text" style="box-shadow: black; border : 2px solid black" class="form-control mt-3" id="flight" placeholder="enter a destination" [(ngModel)]="searchTerm">
+
+
+
+<br>
+
+<!--  list of all destinations in the form of cards and modals -->
+<div style="display:inline-flex;" class="bg-dark row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 g-4 mt-5 mb-5 m-1" *ngFor="let obj of currency | searchfilter:searchTerm">
+    
+    <div class="card bg-warning m-1 p-1" style="width: 19rem;height:15rem;">
+      <div class="card-body">
+        <h4 class="card-title">
+          {{obj["name"]}}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Flight to {{obj["name"]}} </h6>
+        <p class="card-text">Click the button below to get more details of the flight... </p>
+        <div class="card-footer">
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Flight details
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Flight details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Destination : {{obj["name"]}}</h4>
+        <h4>Codes : </h4>
+        <h4 class="text-lead">
+          alpha2Code : {{obj["alpha2Code"]}} , 
+          alpha3Code : {{obj["alpha3Code"]}} </h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" formtarget="_blank">Book flight</button>
+      </div>
     </div>
-</div> -->
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- <h4 *ngFor="let obj of currency,let i=index">
+            <h3>index:{{i}}</h3>
+            {{obj["alpha2Code"]}}
+            {{obj["alpha3Code"]}}
+            {{obj["name"]}}
+      </h4> -->
+        <!-- {{currency[0]["alpha2Code"]}}  -->
+</div> 

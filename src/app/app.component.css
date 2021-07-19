@@ -2,9 +2,9 @@
     background-color: black;
     width: 100%;
     position: relative;
-    left: 0%;
+    left: -48px;
+    background-image: url("https://speckyboy.com/wp-content/uploads/2020/11/high-resolution-4k-desktop-wallpaper-13.jpg");
 }
 img{
-    height: 900px;
-    width: 90%;
+    width: 100%;
 }
